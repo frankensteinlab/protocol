@@ -1,5 +1,10 @@
+name: superblocks
+
 version: 1
 jobs:
+  build: 
+  run-on: ubuntu-latest
+  
   compile:
     image: node
     script:
