@@ -1,22 +1,19 @@
-name: superblocks
-
 version: 1
 jobs:
-  build: 
-  run-on: ubuntu-latest
-  
-  compile:
+  compile: 
     image: node
     script:
-      - npm install truffle
-      - npx truffle compile
-  test:
-    image: node
-    script:
-      - npm install truffle
-      - npx truffle test
+      - npm install @nomiclabs/buidler @nomiclabs/buidler-truffle5 @nomiclabs/buidler-web3 web3
+      - npm install
+      - npx builder compile
+test:
+  image: node
+  script: 
+    - npm install @nomiclabs/buidler @nomiclabs/buidler-truffle5 @nomiclabs/buidler-web3 web3
+    - npm install
+    - npx buidler test
 stages:
   - pipeline:
       jobs:
         - compile
-        - test 
+        - test
