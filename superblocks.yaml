@@ -19,4 +19,4 @@ stages:
   - pipeline:
       jobs:
         - compile
-        - run & build
+        - test 
